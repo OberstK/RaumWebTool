@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core"  xmlns:ace="http://www.icefaces.org/icefaces/components"   xmlns:ice="http://www.icesoft.com/icefaces/component" 
+	>
+    <h:head>
+        <title>Register User</title>
+        
+    </h:head>
+    <h:body styleClass="ice-skin-rime" style="margin:auto; margin-top:40px; height: 269px; width: 287px; ">     
+       <b>
+		<ice:outputText value="USER DETAILS FORM"> </ice:outputText>
+		</b>
+		<ice:form>
+				<ice:panelGrid border="0" columns="2">
+					<ice:outputText value="Name"></ice:outputText>
+					<ice:inputText id="name" value="#{userDetails.name}" required="true" requiredMessage="Please enter your Name"
+  validatorMessage="Please enter more than 3 characters for name">
+  					<f:validateLength minimum="3"/>
+  					</ice:inputText>
+					<ice:outputText value="Passwort"></ice:outputText>
+					<ice:inputText id="password" value="#{userDetails.passwort}" required="true" requiredMessage="Please enter a password" validatorMessage="Password need a least 6 characters">
+					<f:validateLength minimum="6"/>
+					</ice:inputText>
+					<ice:outputText value="E-Mail"></ice:outputText>
+					<ice:inputText id="email" value="#{userDetails.email}" required="true"
+  requiredMessage="Please enter your email"></ice:inputText>
+					<ice:outputText value="Alter"></ice:outputText>
+					<ice:inputText id="age" value="#{userDetails.age}" required="true" requiredMessage="Please enter your age"
+  validatorMessage="Please enter correct age ">
+   					<f:validateLength maximum="3"/>
+   					</ice:inputText>
+				</ice:panelGrid>
+		<ice:commandButton type="submit" value="Abschicken"></ice:commandButton><form>
+			
+		</form>
+	</ice:form>
+    </h:body>
+</html>
